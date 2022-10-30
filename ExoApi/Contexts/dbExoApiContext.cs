@@ -20,10 +20,11 @@ namespace ExoApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source = DENISE-SOUZA\\SQLEXPRESS; initial catalog = db_Exo;"); //Aqui poderia ter colocado user e password do SQL
+                optionsBuilder.UseSqlServer("Data Source = DENISE-SOUZA\\SQLEXPRESS; initial catalog = db_exo; Integrated Security = true");
             }
         }
-
         public DbSet<Projeto> Projetos { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }    
     }
 }

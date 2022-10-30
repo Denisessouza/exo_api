@@ -1,6 +1,8 @@
-﻿using ExoApi.Repositories;
+﻿using ExoApi.Models;
+using ExoApi.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ExoApi.Controllers
 
@@ -24,7 +26,7 @@ namespace ExoApi.Controllers
 
             try
             {
-                return Ok (_projetoRepository.Listar());
+                return Ok(_projetoRepository.Listar());
 
             }
             catch (Exception e)
@@ -32,5 +34,61 @@ namespace ExoApi.Controllers
                 throw new Exception(e.Message);
             }
         }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            try
+            {
+                Projeto projeto = _projetoRepository.BuscarPorId(id);
+                if (projeto == null)
+                {
+                    return NotFound();
+                }
+                return Ok(projeto);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar(Projeto projeto)
+        {
+            try
+            {
+                _projetoRepository.Cadastrar(projeto);
+                return StatusCode(201);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(int id, Projeto projeto)
+        {
+            try
+            {
+                _projetoRepository.Atualizar(projeto, id);
+                return StatusCode(204);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        }
+
+
+
+
+
     }
-}

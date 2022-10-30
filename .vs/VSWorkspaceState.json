@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ExoApi",
+    "\\ExoApi\\Contexts",
+    "\\ExoApi\\Controllers",
+    "\\ExoApi\\Interfaces",
+    "\\ExoApi\\Models"
+  ],
+  "SelectedNode": "\\ExoApi\\Models\\Projeto.cs",
+  "PreviewInSolutionExplorer": false
+}
