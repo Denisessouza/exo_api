@@ -7,6 +7,6 @@
     "\\ExoApi\\Interfaces",
     "\\ExoApi\\Models"
   ],
-  "SelectedNode": "\\ExoApi\\Models\\Projeto.cs",
+  "SelectedNode": "\\ExoApi\\Controllers\\ProjetoController.cs",
   "PreviewInSolutionExplorer": false
 }
